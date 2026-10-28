@@ -1,0 +1,16 @@
+{
+  "name": "quorum-live-quiz",
+  "version": "1.0.0",
+  "description": "Live quiz rooms: host builds a quiz, players join with a room code and name, real-time scoring and leaderboard.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "license": "MIT"
+}
