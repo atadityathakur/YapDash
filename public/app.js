@@ -120,7 +120,7 @@
   /* Saved quizzes (browser storage on the host's device)                */
   /* ================================================================== */
 
-  const QUIZ_KEY = 'quorum.quizzes.v1';
+  const QUIZ_KEY = 'YapDash.quizzes.v1';
   let quizzes = store.get(QUIZ_KEY, []);
   if (!Array.isArray(quizzes)) quizzes = [];
 
@@ -242,7 +242,7 @@
   /* ================================================================== */
 
   const net = { ws: null, open: false, queue: [], retry: 0, timer: null };
-  let session = store.get('quorum.session', null);
+  let session = store.get('YapDash.session', null);
   let game = null;
   let offset = 0;
   let view = 'home';
@@ -253,8 +253,8 @@
   let editorMark = null;
 
   function persistSession() {
-    if (session) store.set('quorum.session', session);
-    else store.del('quorum.session');
+    if (session) store.set('YapDash.session', session);
+    else store.del('YapDash.session');
   }
 
   function clearSession() {
@@ -338,7 +338,7 @@
           ? { role: 'host', code: m.code, hostKey: m.hostKey }
           : { role: 'player', code: m.code, token: m.token, name: m.name };
       persistSession();
-      if (m.role === 'player') store.set('quorum.name', m.name);
+      if (m.role === 'player') store.set('YapDash.name', m.name);
     } else if (m.type === 'state') {
       game = m;
       offset = m.serverNow - Date.now();
@@ -379,7 +379,7 @@
     clearSession();
     busy = 'join';
     formError = '';
-    store.set('quorum.name', name);
+    store.set('YapDash.name', name);
     render();
     sendMsg({ type: 'player:join', code, name });
   }
@@ -430,7 +430,7 @@
   }
 
   function wordmark(linked) {
-    const inner = [mark(), h('span', null, 'Quorum')];
+    const inner = [mark(), h('span', null, 'YapDash')];
     if (!linked) return h('span', { class: 'wordmark' }, inner);
     return h(
       'a',
@@ -476,7 +476,7 @@
   function renderHome() {
     const params = new URLSearchParams(location.search);
     const prefill = (params.get('room') || '').replace(/\D/g, '').slice(0, 6);
-    const savedName = store.get('quorum.name', '');
+    const savedName = store.get('YapDash.name', '');
 
     const codeInput = h('input', {
       class: 'input code-input',
