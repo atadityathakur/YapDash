@@ -130,21 +130,55 @@
     return { uid: uid(), text: '', options: ['', '', '', ''], correct: -1, time: 20 };
   }
 
-  function sampleQuiz() {
-    const q = (text, options, correct, time = 20) => ({ uid: uid(), text, options, correct, time });
-    return {
-      id: uid(),
-      title: 'General knowledge warm-up',
-      updated: Date.now(),
-      questions: [
-        q('What does GDP stand for?', ['Gross Domestic Product', 'General Daily Profit', 'Global Demand Price', 'Gross Dividend Payout'], 0),
-        q('Which ocean is the largest by area?', ['Atlantic', 'Indian', 'Pacific', 'Arctic'], 2),
-        q('What is the chemical symbol for sodium?', ['So', 'Na', 'Sd', 'Sn'], 1, 15),
-        q('Who wrote the novel Pride and Prejudice?', ['Charlotte Brontë', 'Jane Austen', 'Mary Shelley', 'George Eliot'], 1),
-        q('A hexagon has how many sides?', ['5', '6', '7', '8'], 1, 10),
-      ],
-    };
-  }
+
+function sampleQuiz() {
+  const q = (text, options, correct, time = 20) => ({ uid: uid(), text, options, correct, time });
+
+  return {
+    id: uid(),
+    title: 'Are You Being Influenced?',
+    updated: Date.now(),
+    questions: [
+      q(
+        'You see a character in a Bollywood movie repeatedly using a particular phone brand. What marketing technique is this?',
+        ['Subliminal advertising', 'Product placement', 'Direct selling', 'Comparative advertising'],
+        1,
+        20
+      ),
+      q(
+        'Which of these is the closest example of subliminal advertising?',
+        ['A TV ad openly promoting a soft drink', 'A brand logo displayed on a billboard', 'A hidden image flashed too briefly to be consciously noticed', 'A celebrity recommending a product'],
+        2,
+        20
+      ),
+      q(
+        'Why might a brand repeatedly use the same colours, music and logo?',
+        ['To increase manufacturing efficiency', 'To build familiarity and brand recognition', 'To reduce product quality', 'To avoid advertising regulations'],
+        1,
+        20
+      ),
+      q(
+        'A food delivery app displays "Only 2 minutes left!" during checkout. Which psychological trigger is being used?',
+        ['Scarcity and urgency', 'Anchoring', 'Social proof', 'Decoy effect'],
+        0,
+        20
+      ),
+      q(
+        'An influencer promotes a product without disclosing that the post is sponsored. What is the main concern?',
+        ['Excessive product placement', 'Hidden advertising and lack of transparency', 'Subliminal audio', 'Comparative marketing'],
+        1,
+        20
+      ),
+      q(
+        'Which statement best describes the difference between subliminal and hidden marketing?',
+        ['Both always involve flashing images', 'Subliminal marketing is below conscious awareness; hidden marketing can be subtle but consciously visible', 'Hidden marketing is always illegal', 'Subliminal marketing only occurs in movies'],
+        1,
+        30
+      ),
+    ],
+  };
+}
+
 
   function prepareQuiz(quiz) {
     const fail = (message, qi, field) => ({ ok: false, message, qi, field });
