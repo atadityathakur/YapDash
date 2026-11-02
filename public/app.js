@@ -120,11 +120,20 @@
   /* Saved quizzes (browser storage on the host's device)                */
   /* ================================================================== */
 
-  const QUIZ_KEY = 'YapDash.quizzes.v1';
-  let quizzes = store.get(QUIZ_KEY, []);
-  if (!Array.isArray(quizzes)) quizzes = [];
+const QUIZ_KEY = 'YapDash.quizzes.v1';
 
-  const saveQuizzes = () => store.set(QUIZ_KEY, quizzes);
+let quizzes = store.get(QUIZ_KEY, null);
+
+if (!Array.isArray(quizzes)) {
+  quizzes = [];
+}
+
+// Automatically add the sample quiz for first-time visitors.
+if (quizzes.length === 0) {
+  quizzes.push(sampleQuiz());
+}
+
+const saveQuizzes = () => store.set(QUIZ_KEY, quizzes);
 
   function blankQuestion() {
     return { uid: uid(), text: '', options: ['', '', '', ''], correct: -1, time: 20 };
