@@ -152,37 +152,37 @@ function sampleQuiz() {
         'You see a character in a Bollywood movie repeatedly using a particular phone brand. What marketing technique is this?',
         ['Subliminal advertising', 'Product placement', 'Direct selling', 'Comparative advertising'],
         1,
-        20
+        10
       ),
       q(
         'Which of these is the closest example of subliminal advertising?',
         ['A TV ad openly promoting a soft drink', 'A brand logo displayed on a billboard', 'A hidden image flashed too briefly to be consciously noticed', 'A celebrity recommending a product'],
         2,
-        20
+        10
       ),
       q(
         'Why might a brand repeatedly use the same colours, music and logo?',
         ['To increase manufacturing efficiency', 'To build familiarity and brand recognition', 'To reduce product quality', 'To avoid advertising regulations'],
         1,
-        20
+        10
       ),
       q(
         'A food delivery app displays "Only 2 minutes left!" during checkout. Which psychological trigger is being used?',
         ['Scarcity and urgency', 'Anchoring', 'Social proof', 'Decoy effect'],
         0,
-        20
+        10
       ),
       q(
         'An influencer promotes a product without disclosing that the post is sponsored. What is the main concern?',
         ['Excessive product placement', 'Hidden advertising and lack of transparency', 'Subliminal audio', 'Comparative marketing'],
         1,
-        20
+        10
       ),
       q(
         'Which statement best describes the difference between subliminal and hidden marketing?',
         ['Both always involve flashing images', 'Subliminal marketing is below conscious awareness; hidden marketing can be subtle but consciously visible', 'Hidden marketing is always illegal', 'Subliminal marketing only occurs in movies'],
         1,
-        30
+        10
       ),
     ],
   };
